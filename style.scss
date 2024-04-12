@@ -1,0 +1,27 @@
+// @font-face {
+//   font-family: "OpenSans";
+//   src: url("Fun_Light.ttf"), url("Fun_Light.eot");
+// }
+.body {
+  font-family: "Open Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  display: flex;
+  flex-direction: row;
+}
+* {
+  margin: 0;
+  padding: 0;
+}
+.menu {
+  &-userProfile {
+    border-bottom: solid 1px;
+    border-color: gray;
+  }
+  &-News {
+    border-bottom: solid 1px;
+    border-color: gray;
+  }
+  &-AddPost {
+  }
+}
