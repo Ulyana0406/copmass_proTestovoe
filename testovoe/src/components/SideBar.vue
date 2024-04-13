@@ -65,6 +65,7 @@ export default {
 </script>
 <style>
 .sidebar {
+  position: fixed;
   display: flex;
   flex-direction: column;
 }

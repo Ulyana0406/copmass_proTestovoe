@@ -2,19 +2,19 @@
   <div class="app" id="app">
     <router-view class="app">
       <SideBar />
-      <Home />
+      <News />
     </router-view>
   </div>
 </template>
 
 <script>
 import SideBar from "./components/SideBar.vue";
-import Home from "./views/News.vue";
+import News from "./views/News.vue";
 
 export default {
   name: "App",
   components: {
-    Home,
+    News,
     SideBar,
   },
 };
