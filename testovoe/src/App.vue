@@ -1,44 +1,23 @@
 <template>
   <div class="app" id="app">
-    <div class="menu">
-      <section class="menu-userProfile">
-        <div class="menu-userProfile__img">
-          <img src="" alt="" />
-        </div>
-        <div class="menu-userProfile__info">
-          <p>Ирина</p>
-          <a>test@mail.ru</a>
-        </div>
-      </section>
-      <section class="menu-News">
-        <img src="" alt="" />
-        <div class="menu-News__allNews">Все новости</div>
-      </section>
-      <section class="menu-AddPost">
-        <img src="" alt="" />
-        <div class="menu-AddPost__allNews">Добавить новость</div>
-      </section>
-    </div>
-    <Home />
+    <router-view>
+      <SideBar />
+      <Home />
+    </router-view>
   </div>
 </template>
 
 <script>
+import SideBar from "./components/SideBar.vue";
 import Home from "./views/Home.vue";
-// import router from "./router";
+// import { router } from "./router";
+// import { useRoute } from "vue-router";
 
 export default {
   name: "App",
   components: {
     Home,
-  },
-  methods: {
-    goToNewsList() {
-      this.$router.push("/");
-    },
-    goToAddNews() {
-      this.$router.push("/create");
-    },
+    SideBar,
   },
 };
 </script>
@@ -56,11 +35,19 @@ export default {
   margin-right: 50px;
 }
 .menu {
+  background-color: rgb(255, 255, 255);
+  width: 274px;
   display: flex;
   flex-direction: column;
-  margin-right: 125px;
+  margin-right: 74px;
+}
+.imgProfile {
+  height: 40px;
+  width: 40px;
 }
 .menu-userProfile {
+  gap: 20px;
+  display: flex;
   border-bottom: solid 1px;
   border-color: gray;
 }
