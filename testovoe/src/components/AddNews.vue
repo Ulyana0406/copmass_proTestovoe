@@ -2,7 +2,7 @@
   <form @submit.prevent="submitNews">
     <input v-model="newNews.title" placeholder="Title" required />
     <textarea v-model="newNews.body" placeholder="Content" required></textarea>
-    <button type="submit">Add News</button>
+    <button type="submit">Добавить новость</button>
   </form>
 </template>
 

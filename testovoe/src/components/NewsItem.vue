@@ -1,8 +1,15 @@
 <template>
-  <div>
-    <h2 @click="toggleBody">{{ news.title }}</h2>
-    <p v-if="showBody">{{ news.body }}</p>
-    <button @click="deleteNews()">Delete</button>
+  <div class="item">
+    <div class="new">
+      <h1 class="itemnumber">{{ news.id }}</h1>
+
+      <div class="newstext">
+        <h3 class="title" @click="toggleBody">{{ news.title }}</h3>
+        <p class="newAuthorId">id автора:{{ news.userId }}</p>
+        <p v-if="showBody">{{ news.body }}</p>
+      </div>
+    </div>
+    <button class="deleteButton" @click="deleteNews()">Удалить</button>
   </div>
 </template>
 
@@ -34,3 +41,46 @@ export default {
   },
 };
 </script>
+
+<style>
+.item {
+  display: flex;
+  background-color: white;
+  border-bottom: solid 1px;
+  border-color: #b6b6b6;
+  align-items: center;
+  justify-content: space-between;
+}
+.title {
+  margin-bottom: 5px;
+}
+.new {
+  display: flex;
+}
+.itemnumber {
+  padding-left: 20px;
+  font-size: 50px;
+  display: flex;
+  align-items: center;
+  color: #cbcbcb;
+}
+.newstext {
+  display: flex;
+  flex-direction: column;
+  margin-left: 53px;
+}
+.deleteButton {
+  background-color: white;
+  margin-right: 20px;
+  border: none;
+  background-color: none;
+  font-family: "Open Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  font-size: 18px;
+  color: #ff6d6df5;
+}
+.newAuthorId {
+  margin-top: 0;
+}
+</style>

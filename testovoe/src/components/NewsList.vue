@@ -1,8 +1,8 @@
 <template>
   <div>
     <div v-if="loading">Loading news...</div>
-    <div v-for="news in newsList" :key="news.id">
-      <NewsItem :news="news" />
+    <div class="newsList" v-for="news in newsList" :key="news.id">
+      <NewsItem :news="news" @deleteNews="deleteNewsItem" />
     </div>
   </div>
 </template>
@@ -38,6 +38,16 @@ export default {
           this.loading = false;
         });
     },
+    deleteNewsItem(newsId) {
+      this.newsList = this.newsList.filter((item) => item.id !== newsId);
+    },
   },
 };
 </script>
+
+<style>
+.newsList {
+  width: 850px;
+  margin: 0;
+}
+</style>

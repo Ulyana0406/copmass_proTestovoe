@@ -1,6 +1,6 @@
 <template>
   <div class="app" id="app">
-    <router-view>
+    <router-view class="app">
       <SideBar />
       <Home />
     </router-view>
@@ -9,9 +9,7 @@
 
 <script>
 import SideBar from "./components/SideBar.vue";
-import Home from "./views/Home.vue";
-// import { router } from "./router";
-// import { useRoute } from "vue-router";
+import Home from "./views/News.vue";
 
 export default {
   name: "App",
@@ -39,7 +37,6 @@ export default {
   width: 274px;
   display: flex;
   flex-direction: column;
-  margin-right: 74px;
 }
 .imgProfile {
   height: 40px;
@@ -54,6 +51,5 @@ export default {
 .menu-News {
   border-bottom: solid 1px;
   border-color: gray;
-} /*# sourceMappingURL=style.css.map */
-/* Global styles, potentially for body, header, etc. */
+}
 </style>
