@@ -28,15 +28,16 @@ export default {
     },
 
     deleteNews() {
-      axios
-        .delete(`https://jsonplaceholder.typicode.com/posts/${this.news.id}`)
-        // Обратите внимание на использование обратных кавычек ` для вставки значения this.news.id
-        .then(() => {
-          this.$emit("deleteNews", this.news.id);
-        })
-        .catch((error) => {
-          console.error("There was an error deleting the news:", error);
-        });
+      if (confirm("Вы уверены, что хотите удалить эту новость?"))
+        axios
+          .delete(`https://jsonplaceholder.typicode.com/posts/${this.news.id}`)
+          // Обратите внимание на использование обратных кавычек ` для вставки значения this.news.id
+          .then(() => {
+            this.$emit("deleteNews", this.news.id);
+          })
+          .catch((error) => {
+            console.error("There was an error deleting the news:", error);
+          });
     },
   },
 };
