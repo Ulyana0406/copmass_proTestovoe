@@ -18,6 +18,18 @@
 
 // export { router };
 
+// import { createRouter, createWebHistory } from "vue-router";
+// import Home from "../views/News.vue";
+// import Create from "../views/Create.vue";
+
+// export default createRouter({
+//   history: createWebHistory(),
+//   routes: [
+//     { path: "/", component: Home },
+//     { path: "/create", component: Create },
+//   ],
+// });
+
 import { createRouter, createWebHistory } from "vue-router";
 import Home from "../views/News.vue";
 import Create from "../views/Create.vue";
@@ -25,7 +37,15 @@ import Create from "../views/Create.vue";
 export default createRouter({
   history: createWebHistory(),
   routes: [
-    { path: "/", component: Home },
-    { path: "/create", component: Create },
+    {
+      name: "Home",
+      path: "/",
+      component: Home,
+    },
+    {
+      name: "Create",
+      path: "/create",
+      component: Create,
+    },
   ],
 });

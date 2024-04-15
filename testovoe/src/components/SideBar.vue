@@ -29,40 +29,19 @@
     </section>
     <section class="menu-News">
       <img src="" alt="" />
-      <button @click="goToNewsList" class="menu-News__allNews">
-        Все новости
-      </button>
+      <RouterLink to="/" class="menu-News__allNews">Все новости</RouterLink>
     </section>
     <section class="menu-AddPost">
       <img src="" alt="" />
-      <button @click="goToAddNews" class="menu-AddPost__allNews">
-        Добавить новость
-      </button>
+      <RouterLink to="/create" class="menu-AddPost__allNews"
+        >Добавить новость
+      </RouterLink>
     </section>
   </div>
 </template>
-<script>
-import { useRouter } from "vue-router";
 
-export default {
-  setup() {
-    const router = useRouter();
+<script></script>
 
-    const goToNewsList = () => {
-      router.push("/");
-    };
-
-    const goToAddNews = () => {
-      router.push("/create");
-    };
-
-    return {
-      goToNewsList,
-      goToAddNews,
-    };
-  },
-};
-</script>
 <style>
 .sidebar {
   position: fixed;
@@ -106,6 +85,9 @@ export default {
   border: none;
   font-size: 16px;
   background-color: white;
+  text-decoration: none;
+  outline: none;
+  color: black;
 }
 .menu-AddPost__allNews {
   font-family: "Open Sans", sans-serif;
@@ -113,6 +95,9 @@ export default {
   font-style: normal;
   border: none;
   font-size: 16px;
+  text-decoration: none;
+  outline: none;
+  color: black;
 
   background-color: white;
 }

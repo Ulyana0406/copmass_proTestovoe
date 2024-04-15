@@ -1,20 +1,16 @@
 <template>
   <div class="app" id="app">
-    <router-view class="app">
-      <SideBar />
-      <News />
-    </router-view>
+    <SideBar />
+    <router-view />
   </div>
 </template>
 
 <script>
 import SideBar from "./components/SideBar.vue";
-import News from "./views/News.vue";
 
 export default {
   name: "App",
   components: {
-    News,
     SideBar,
   },
 };
